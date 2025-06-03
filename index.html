@@ -94,7 +94,7 @@
 <body>
     <div class="container">
         <h2>College Admission Application Form</h2>
-        <form action="#" method="post">
+        <form id="admissionForm" action="#" method="post">
             <fieldset>
                 <legend><h3>Personal Information</h3></legend>
                 <div class="flex-row">
@@ -184,5 +184,61 @@
             <button type="submit" class="submit-button">Submit Application</button>
         </form>
     </div>
+
+    <script>
+    document.getElementById('admissionForm').addEventListener('submit', function(event) {
+        // Prevent default form submission for now to see GA4 event in action
+        // event.preventDefault(); 
+
+        const firstName = document.getElementById('firstName').value;
+        const lastName = document.getElementById('lastName').value;
+        const email = document.getElementById('email').value;
+        const dob = document.getElementById('dob').value;
+        const phone = document.getElementById('phone').value;
+        const gender = document.querySelector('input[name="gender"]:checked') ? document.querySelector('input[name="gender"]:checked').value : 'not_specified';
+        const address = document.getElementById('address').value;
+
+        // Calculate age group (example, you might need a more robust calculation)
+        let ageGroup = 'unknown';
+        if (dob) {
+            const birthYear = new Date(dob).getFullYear();
+            const currentYear = new Date().getFullYear();
+            const age = currentYear - birthYear;
+            if (age >= 18 && age <= 24) {
+                ageGroup = '18-24';
+            } else if (age >= 25 && age <= 34) {
+                ageGroup = '25-34';
+            } else if (age >= 35 && age <= 44) {
+                ageGroup = '35-44';
+            } else if (age >= 45) {
+                ageGroup = '45+';
+            }
+        }
+
+        const phoneProvided = phone ? 'yes' : 'no';
+
+        // Send a custom event with parameters to GA4
+        gtag('event', 'admission_form_submit', {
+            'form_name': 'College Admission Application', // Event-scoped custom dimension
+            'submission_status': 'success', // Event-scoped custom dimension (assuming success here)
+            'first_name': firstName, // Example: can be sent as parameter but not necessarily a custom dimension
+            'last_name': lastName,
+            'email_address': email,
+            'user_gender': gender, // User-scoped custom dimension
+            'user_dob': dob, // User-scoped custom dimension (consider privacy implications)
+            'user_age_group': ageGroup, // User-scoped custom dimension
+            'user_phone_provided': phoneProvided, // User-scoped custom dimension
+            // You can add more parameters here as needed
+        });
+
+        // After sending the event, you can allow the form to submit
+        // event.target.submit(); 
+    });
+
+    // You might also want to set user properties when the page loads,
+    // if you have user data available from a backend system.
+    // For this example, we're setting user properties on form submission.
+</script>
+    
 </body>
 </html>
