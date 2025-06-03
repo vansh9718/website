@@ -1,195 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XYD21VTSDD"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XYD21VTSDD"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-  gtag('config', 'G-XYD21VTSDD');
+  gtag('config', 'G-XYD21VTSDD');
 </script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>College Admission Application</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            display: flex;
-            justify-content: center;
-            padding: 20px;
-        }
-        .container {
-            background-color: #ffffff;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 100%;
-            max-width: 700px;
-        }
-        h2 {
-            text-align: center;
-            color: #333;
-            margin-bottom: 25px;
-        }
-        .form-group {
-            margin-bottom: 15px;
-        }
-        .form-group label {
-            display: block;
-            margin-bottom: 5px;
-            color: #555;
-            font-weight: bold;
-        }
-        .form-group input[type="text"],
-        .form-group input[type="email"],
-        .form-group input[type="date"],
-        .form-group select,
-        .form-group textarea {
-            width: calc(100% - 22px); /* Account for padding and border */
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            box-sizing: border-box; /* Include padding and border in the element's total width and height */
-        }
-        .form-group textarea {
-            resize: vertical;
-            min-height: 80px;
-        }
-        .form-group input[type="radio"],
-        .form-group input[type="checkbox"] {
-            margin-right: 8px;
-        }
-        .gender-options label {
-            display: inline-block;
-            margin-right: 20px;
-        }
-        .submit-button {
-            width: 100%;
-            padding: 12px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            font-size: 18px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-        .submit-button:hover {
-            background-color: #0056b3;
-        }
-        .flex-row {
-            display: flex;
-            gap: 20px;
-            margin-bottom: 15px;
-        }
-        .flex-row .form-group {
-            flex: 1;
-            margin-bottom: 0; /* Override default margin for flex items */
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Admission Application</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 700px;
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 25px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+            font-weight: bold;
+        }
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group input[type="date"],
+        .form-group select,
+        .form-group textarea {
+            width: calc(100% - 22px); /* Account for padding and border */
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box; /* Include padding and border in the element's total width and height */
+        }
+        .form-group textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+        .form-group input[type="radio"],
+        .form-group input[type="checkbox"] {
+            margin-right: 8px;
+        }
+        .gender-options label {
+            display: inline-block;
+            margin-right: 20px;
+        }
+        .submit-button {
+            width: 100%;
+            padding: 12px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .submit-button:hover {
+            background-color: #0056b3;
+        }
+        .flex-row {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 15px;
+        }
+        .flex-row .form-group {
+            flex: 1;
+            margin-bottom: 0; /* Override default margin for flex items */
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <h2>College Admission Application Form</h2>
-        <form id="admissionForm" action="#" method="post">
-            <fieldset>
-                <legend><h3>Personal Information</h3></legend>
-                <div class="flex-row">
-                    <div class="form-group">
-                        <label for="firstName">First Name:</label>
-                        <input type="text" id="firstName" name="firstName" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="lastName">Last Name:</label>
-                        <input type="text" id="lastName" name="lastName" required>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="flex-row">
-                    <div class="form-group">
-                        <label for="dob">Date of Birth:</label>
-                        <input type="date" id="dob" name="dob" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="phone">Phone Number:</label>
-                        <input type="text" id="phone" name="phone" placeholder="+91-XXXXXXXXXX" pattern="[0-9]{10}|[0-9]{3}[-]{1}[0-9]{7}" title="Enter a 10-digit phone number or use XXX-XXXXXXX format">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label>Gender:</label>
-                    <div class="gender-options">
-                        <input type="radio" id="male" name="gender" value="male">
-                        <label for="male">Male</label>
-                        <input type="radio" id="female" name="gender" value="female">
-                        <label for="female">Female</label>
-                        <input type="radio" id="other" name="gender" value="other">
-                        <label for="other">Other</label>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="address">Address:</label>
-                    <textarea id="address" name="address" rows="3" required></textarea>
-                </div>
-            </fieldset>
+    <div class="container">
+        <h2>College Admission Application Form</h2>
+        <form id="admissionForm" action="#" method="post">
+            <fieldset>
+                <legend><h3>Personal Information</h3></legend>
+                <div class="flex-row">
+                    <div class="form-group">
+                        <label for="firstName">First Name:</label>
+                        <input type="text" id="firstName" name="firstName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Last Name:</label>
+                        <input type="text" id="lastName" name="lastName" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="flex-row">
+                    <div class="form-group">
+                        <label for="dob">Date of Birth:</label>
+                        <input type="date" id="dob" name="dob" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number:</label>
+                        <input type="text" id="phone" name="phone" placeholder="+91-XXXXXXXXXX" pattern="[0-9]{10}|[0-9]{3}[-]{1}[0-9]{7}" title="Enter a 10-digit phone number or use XXX-XXXXXXX format">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Gender:</label>
+                    <div class="gender-options">
+                        <input type="radio" id="male" name="gender" value="male">
+                        <label for="male">Male</label>
+                        <input type="radio" id="female" name="gender" value="female">
+                        <label for="female">Female</label>
+                        <input type="radio" id="other" name="gender" value="other">
+                        <label for="other">Other</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="address">Address:</label>
+                    <textarea id="address" name="address" rows="3" required></textarea>
+                </div>
+            </fieldset>
 
-            <br>
+             <fieldset>
+                 <legend><h3>Academic Information</h3></legend>
+                 <div class="form-group">
+                     <label for="highSchool">High School Name:</label>
+                     <input type="text" id="highSchool" name="highSchool">
+                 </div>
+                 <div class="form-group">
+                     <label for="gpa">GPA (e.g., 3.5):</label>
+                     <input type="text" id="gpa" name="gpa">
+                 </div>
+             </fieldset>
 
-            <fieldset>
-                <legend><h3>Academic Information</h3></legend>
-                <div class="form-group">
-                    <label for="program">Program of Interest:</label>
-                    <select id="program" name="program" required>
-                        <option value="">--Please select--</option>
-                        <option value="computerScience">Computer Science</option>
-                        <option value="mechanicalEngineering">Mechanical Engineering</option>
-                        <option value="electricalEngineering">Electrical Engineering</option>
-                        <option value="businessAdministration">Business Administration</option>
-                        <option value="liberalArts">Liberal Arts</option>
-                        <option value="other">Other</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="gpa">High School GPA (e.g., 4.0):</label>
-                    <input type="text" id="gpa" name="gpa" placeholder="e.g., 3.5" pattern="[0-9]+\.?[0-9]*" title="Enter a valid GPA (e.g., 3.5)">
-                </div>
-                <div class="form-group">
-                    <label for="extracurriculars">Extracurricular Activities / Achievements:</label>
-                    <textarea id="extracurriculars" name="extracurriculars" rows="4" placeholder="List any clubs, sports, volunteering, awards, etc."></textarea>
-                </div>
-            </fieldset>
+             <button type="submit" class="submit-button">Submit Application</button>
+        </form>
+    </div>
 
-            <br>
+<script>
+    // Record the time when the page loads
+    const pageLoadTime = Date.now();
 
-            <fieldset>
-                <legend><h3>Essay / Personal Statement</h3></legend>
-                <div class="form-group">
-                    <label for="essay">Tell us about your aspirations and why you want to attend our college (Min 200 words):</label>
-                    <textarea id="essay" name="essay" rows="8" required></textarea>
-                </div>
-            </fieldset>
-
-            <br>
-
-            <div class="form-group">
-                <input type="checkbox" id="terms" name="terms" required>
-                <label for="terms">I agree to the <a href="#" target="_blank">Terms and Conditions</a></label>
-            </div>
-
-            <button type="submit" class="submit-button">Submit Application</button>
-        </form>
-    </div>
-
-    <script>
     document.getElementById('admissionForm').addEventListener('submit', function(event) {
         // Prevent default form submission for now to see GA4 event in action
         // event.preventDefault(); 
 
+        // --- Custom Dimensions Data Capture (from previous response) ---
         const firstName = document.getElementById('firstName').value;
         const lastName = document.getElementById('lastName').value;
         const email = document.getElementById('email').value;
@@ -198,7 +170,7 @@
         const gender = document.querySelector('input[name="gender"]:checked') ? document.querySelector('input[name="gender"]:checked').value : 'not_specified';
         const address = document.getElementById('address').value;
 
-        // Calculate age group (example, you might need a more robust calculation)
+        // Calculate age group
         let ageGroup = 'unknown';
         if (dob) {
             const birthYear = new Date(dob).getFullYear();
@@ -214,21 +186,43 @@
                 ageGroup = '45+';
             }
         }
-
         const phoneProvided = phone ? 'yes' : 'no';
+
+        // --- Custom Metrics Data Capture ---
+
+        // 1. Calculate form_field_count
+        let filledFieldCount = 0;
+        const form = event.target;
+        const formInputs = form.querySelectorAll('input[type="text"], input[type="email"], input[type="date"], textarea, select');
+        
+        formInputs.forEach(input => {
+            if (input.value && input.value.trim() !== '') {
+                filledFieldCount++;
+            }
+        });
+
+        // Also check radio buttons for 'gender'
+        if (document.querySelector('input[name="gender"]:checked')) {
+            filledFieldCount++;
+        }
+
+        // 2. Calculate time_on_form (in seconds)
+        const submissionTime = Date.now();
+        const timeSpentOnForm = Math.round((submissionTime - pageLoadTime) / 1000); // in seconds
 
         // Send a custom event with parameters to GA4
         gtag('event', 'admission_form_submit', {
-            'form_name': 'College Admission Application', // Event-scoped custom dimension
-            'submission_status': 'success', // Event-scoped custom dimension (assuming success here)
-            'first_name': firstName, // Example: can be sent as parameter but not necessarily a custom dimension
-            'last_name': lastName,
-            'email_address': email,
-            'user_gender': gender, // User-scoped custom dimension
-            'user_dob': dob, // User-scoped custom dimension (consider privacy implications)
-            'user_age_group': ageGroup, // User-scoped custom dimension
-            'user_phone_provided': phoneProvided, // User-scoped custom dimension
-            // You can add more parameters here as needed
+            // Dimensions
+            'form_name': 'College Admission Application',
+            'submission_status': 'success',
+            'user_gender': gender,
+            'user_dob': dob, // Be cautious with PII
+            'user_age_group': ageGroup,
+            'user_phone_provided': phoneProvided,
+
+            // Metrics
+            'form_field_count': filledFieldCount, // Custom metric
+            'time_on_form_seconds': timeSpentOnForm // Custom metric
         });
 
         // After sending the event, you can allow the form to submit
@@ -239,6 +233,5 @@
     // if you have user data available from a backend system.
     // For this example, we're setting user properties on form submission.
 </script>
-    
 </body>
 </html>
